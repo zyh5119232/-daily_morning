@@ -11,11 +11,15 @@ import random
 # city = os.environ['CITY']
 # birthday = os.environ['BIRTHDAY']
 
-app_id = os.environ["APP_ID"]
-app_secret = os.environ["APP_SECRET"]
+# app_id = os.environ["APP_ID"]
+app_id = "wx868722b3283bc609"
+# app_secret = os.environ["APP_SECRET"]
+app_secret = "560ce15c0a26fa2fddf56971f8f71b4b"
 
-user_id = os.environ["USER_ID"]
-template_id = os.environ["TEMPLATE_ID"]
+# user_id = os.environ["USER_ID"]
+user_id = "orRbX6G5z023QBdzl1APGhkDhMCA"
+# template_id = os.environ["TEMPLATE_ID"]
+template_id = "Fnbp6W7PcsSpFHFkjFMwAMVSvNZt7rB8V6LNasuhyqw"
 
 
 #def get_weather():
