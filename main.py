@@ -6,16 +6,16 @@ import requests
 import os
 import random
 
-today = datetime.now()
-start_date = os.environ['START_DATE']
-city = os.environ['CITY']
-birthday = os.environ['BIRTHDAY']
+# today = datetime.now()
+# start_date = os.environ['START_DATE']
+# city = os.environ['CITY']
+# birthday = os.environ['BIRTHDAY']
 
 app_id = os.environ["APP_ID"]
 app_secret = os.environ["APP_SECRET"]
 
 user_id = os.environ["USER_ID"]
-template_id = os.environ["TEMPLATE_ID"]
+# template_id = os.environ["TEMPLATE_ID"]
 
 
 #def get_weather():
@@ -34,11 +34,11 @@ template_id = os.environ["TEMPLATE_ID"]
 #    next = next.replace(year=next.year + 1)
 #  return (next - today).days
 
-#def get_words():
-#  words = requests.get("https://api.shadiao.pro/chp")
-#  if words.status_code != 200:
-#    return get_words()
-#  return words.json()['data']['text']
+def get_words():
+ words = requests.get("https://api.shadiao.pro/chp")
+ if words.status_code != 200:
+   return get_words()
+ return words.json()['data']['text']
 
 def get_random_color():
   return "#%06x" % random.randint(0, 0xFFFFFF)
@@ -51,6 +51,6 @@ wm = WeChatMessage(client)
 #data = {"weather":{"value":wea},"temperature":{"value":temperature},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday()},"words":{"value":get_words(), "color":get_random_color()}}
 #res = wm.send_template(user_id, template_id, data)
 
-data = {}
+data = {"words":{"value":get_words()}
 my = wm.send_template(user_id, template_id, data)
 print(my)
